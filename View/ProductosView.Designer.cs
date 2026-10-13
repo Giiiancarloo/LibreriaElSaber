@@ -1,6 +1,6 @@
 ﻿namespace View
 {
-    partial class Form1
+    partial class ProductosView
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,21 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductosView));
             label1 = new Label();
             panel1 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
-            txtTitulo = new TextBox();
+            txtNombre = new TextBox();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
             txtCategoria = new TextBox();
-            txtAutor = new TextBox();
+            txtMarca = new TextBox();
             txtPrecio = new TextBox();
-            txtEditorial = new TextBox();
+            label7 = new Label();
             txtCantidad = new TextBox();
             panel2 = new Panel();
             groupBox1 = new GroupBox();
@@ -52,15 +50,14 @@
             btnActualizar = new Button();
             btnGuardar = new Button();
             panel3 = new Panel();
-            dgvLibros = new DataGridView();
+            dgvProductos = new DataGridView();
             panel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             groupBox1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             panel3.SuspendLayout();
-            dgvLibros.CellClick += dgvLibros_CellClick;
-            ((System.ComponentModel.ISupportInitialize)dgvLibros).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -70,9 +67,9 @@
             label1.ForeColor = Color.FromArgb(251, 251, 251);
             label1.Location = new Point(21, 37);
             label1.Name = "label1";
-            label1.Size = new Size(156, 25);
+            label1.Size = new Size(276, 25);
             label1.TabIndex = 0;
-            label1.Text = "Librería el Saber";
+            label1.Text = "Tienda Deportiva El Campeón";
             label1.Click += label1_Click;
             // 
             // panel1
@@ -94,18 +91,16 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.7206955F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10.8538351F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.1157742F));
-            tableLayoutPanel1.Controls.Add(txtTitulo, 1, 0);
+            tableLayoutPanel1.Controls.Add(txtNombre, 1, 0);
             tableLayoutPanel1.Controls.Add(label2, 0, 0);
             tableLayoutPanel1.Controls.Add(label3, 0, 1);
             tableLayoutPanel1.Controls.Add(label4, 2, 0);
             tableLayoutPanel1.Controls.Add(label5, 2, 1);
-            tableLayoutPanel1.Controls.Add(label6, 4, 0);
-            tableLayoutPanel1.Controls.Add(label7, 4, 1);
             tableLayoutPanel1.Controls.Add(txtCategoria, 1, 1);
-            tableLayoutPanel1.Controls.Add(txtAutor, 3, 0);
+            tableLayoutPanel1.Controls.Add(txtMarca, 3, 0);
             tableLayoutPanel1.Controls.Add(txtPrecio, 3, 1);
-            tableLayoutPanel1.Controls.Add(txtEditorial, 5, 0);
-            tableLayoutPanel1.Controls.Add(txtCantidad, 5, 1);
+            tableLayoutPanel1.Controls.Add(label7, 4, 0);
+            tableLayoutPanel1.Controls.Add(txtCantidad, 5, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 100);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -115,14 +110,14 @@
             tableLayoutPanel1.Size = new Size(723, 163);
             tableLayoutPanel1.TabIndex = 2;
             // 
-            // txtTitulo
+            // txtNombre
             // 
-            txtTitulo.BackColor = SystemColors.Menu;
-            txtTitulo.Location = new Point(130, 32);
-            txtTitulo.Margin = new Padding(3, 32, 3, 3);
-            txtTitulo.Name = "txtTitulo";
-            txtTitulo.Size = new Size(141, 23);
-            txtTitulo.TabIndex = 0;
+            txtNombre.BackColor = SystemColors.Menu;
+            txtNombre.Location = new Point(130, 32);
+            txtNombre.Margin = new Padding(3, 32, 3, 3);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(141, 23);
+            txtNombre.TabIndex = 0;
             // 
             // label2
             // 
@@ -131,9 +126,9 @@
             label2.Location = new Point(50, 35);
             label2.Margin = new Padding(50, 35, 3, 0);
             label2.Name = "label2";
-            label2.Size = new Size(45, 17);
+            label2.Size = new Size(61, 17);
             label2.TabIndex = 0;
-            label2.Text = "Título:";
+            label2.Text = "Nombre:";
             // 
             // label3
             // 
@@ -153,9 +148,9 @@
             label4.Location = new Point(279, 35);
             label4.Margin = new Padding(5, 35, 3, 0);
             label4.Name = "label4";
-            label4.Size = new Size(47, 17);
+            label4.Size = new Size(48, 17);
             label4.TabIndex = 0;
-            label4.Text = "Autor:";
+            label4.Text = "Marca:";
             // 
             // label5
             // 
@@ -168,28 +163,6 @@
             label5.TabIndex = 0;
             label5.Text = "Precio:";
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(503, 35);
-            label6.Margin = new Padding(5, 35, 3, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(60, 17);
-            label6.TabIndex = 0;
-            label6.Text = "Editorial:";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(503, 116);
-            label7.Margin = new Padding(5, 35, 3, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(65, 17);
-            label7.TabIndex = 0;
-            label7.Text = "Cantidad:";
-            // 
             // txtCategoria
             // 
             txtCategoria.BackColor = SystemColors.Menu;
@@ -199,14 +172,14 @@
             txtCategoria.Size = new Size(141, 23);
             txtCategoria.TabIndex = 0;
             // 
-            // txtAutor
+            // txtMarca
             // 
-            txtAutor.BackColor = SystemColors.Menu;
-            txtAutor.Location = new Point(338, 32);
-            txtAutor.Margin = new Padding(3, 32, 3, 3);
-            txtAutor.Name = "txtAutor";
-            txtAutor.Size = new Size(141, 23);
-            txtAutor.TabIndex = 0;
+            txtMarca.BackColor = SystemColors.Menu;
+            txtMarca.Location = new Point(338, 32);
+            txtMarca.Margin = new Padding(3, 32, 3, 3);
+            txtMarca.Name = "txtMarca";
+            txtMarca.Size = new Size(141, 23);
+            txtMarca.TabIndex = 0;
             // 
             // txtPrecio
             // 
@@ -217,19 +190,21 @@
             txtPrecio.Size = new Size(141, 23);
             txtPrecio.TabIndex = 0;
             // 
-            // txtEditorial
+            // label7
             // 
-            txtEditorial.BackColor = SystemColors.Menu;
-            txtEditorial.Location = new Point(579, 32);
-            txtEditorial.Margin = new Padding(3, 32, 3, 3);
-            txtEditorial.Name = "txtEditorial";
-            txtEditorial.Size = new Size(141, 23);
-            txtEditorial.TabIndex = 0;
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(503, 35);
+            label7.Margin = new Padding(5, 35, 3, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(65, 17);
+            label7.TabIndex = 0;
+            label7.Text = "Cantidad:";
             // 
             // txtCantidad
             // 
             txtCantidad.BackColor = SystemColors.Menu;
-            txtCantidad.Location = new Point(579, 113);
+            txtCantidad.Location = new Point(579, 32);
             txtCantidad.Margin = new Padding(3, 32, 3, 3);
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(141, 23);
@@ -346,23 +321,24 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(dgvLibros);
+            panel3.Controls.Add(dgvProductos);
             panel3.Dock = DockStyle.Bottom;
             panel3.Location = new Point(0, 263);
             panel3.Name = "panel3";
             panel3.Size = new Size(923, 225);
             panel3.TabIndex = 4;
             // 
-            // dgvLibros
+            // dgvProductos
             // 
-            dgvLibros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvLibros.Dock = DockStyle.Fill;
-            dgvLibros.Location = new Point(0, 0);
-            dgvLibros.Name = "dgvLibros";
-            dgvLibros.Size = new Size(923, 225);
-            dgvLibros.TabIndex = 0;
+            dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProductos.Dock = DockStyle.Fill;
+            dgvProductos.Location = new Point(0, 0);
+            dgvProductos.Name = "dgvProductos";
+            dgvProductos.Size = new Size(923, 225);
+            dgvProductos.TabIndex = 0;
+            dgvProductos.CellClick += dgvLibros_CellClick;
             // 
-            // Form1
+            // ProductosView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -372,8 +348,8 @@
             Controls.Add(panel2);
             Controls.Add(panel3);
             Controls.Add(panel1);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "ProductosView";
+            Text = "Productos";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
@@ -382,7 +358,7 @@
             groupBox1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvLibros).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             ResumeLayout(false);
         }
 
@@ -391,6 +367,7 @@
         private Label label1;
         private Panel panel1;
         private TableLayoutPanel tableLayoutPanel1;
+        private TextBox txtNombre;
         private Panel panel2;
         private Panel panel3;
         private Label label2;
@@ -399,9 +376,8 @@
         private Label label5;
         private Label label6;
         private Label label7;
-        private TextBox txtTitulo;
         private TextBox txtCategoria;
-        private TextBox txtAutor;
+        private TextBox txtMarca;
         private TextBox txtPrecio;
         private TextBox txtEditorial;
         private TextBox txtCantidad;
@@ -411,6 +387,6 @@
         private Button btnEliminar;
         private Button btnBuscar;
         private Button btnActualizar;
-        private DataGridView dgvLibros;
+        private DataGridView dgvProductos;
     }
 }
